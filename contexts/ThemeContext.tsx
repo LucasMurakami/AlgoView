@@ -8,6 +8,7 @@ interface ThemeContextProps {
   theme: ThemeType;
   isDarkMode: boolean;
   setTheme: (theme: ThemeType) => void;
+  toggleTheme: () => void; // Nova função para alternar temas
 }
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
@@ -48,8 +49,14 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({ children 
     }
   };
 
+  // Função para alternar entre temas light e dark
+  const toggleTheme = () => {
+    const newTheme = isDarkMode ? 'light' : 'dark';
+    setTheme(newTheme);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, isDarkMode, setTheme }}>
+    <ThemeContext.Provider value={{ theme, isDarkMode, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

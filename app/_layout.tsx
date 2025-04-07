@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useFonts } from "expo-font";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-
   const [fontsLoaded] = useFonts({
     "Rubik-Bold": require("../assets/fonts/Rubik-Bold.ttf"),
     "Rubik-ExtraBold": require("../assets/fonts/Rubik-ExtraBold.ttf"),
@@ -28,14 +28,16 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider>     
-      <Stack  
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <Stack  
           screenOptions={{ 
-          headerShown: false,
-          animation: 'fade',
-          contentStyle: { flex: 1 } 
+            headerShown: false,
+            animation: 'fade',
+            contentStyle: { flex: 1 } 
           }}
-      />
-    </ThemeProvider>
-  )
+        />
+      </ThemeProvider>
+    </SafeAreaProvider>
+  );
 }
