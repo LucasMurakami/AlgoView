@@ -5,7 +5,7 @@ export const algorithmCategories = [
   {
     id: 'sorting',
     title: 'Sorting Algorithms',
-    icon: 'sort-outline',
+    icon: 'swap-vertical',
     description: 'Algoritmos para ordenar coleções de dados',
     color: '#FF6B6B',
   },
@@ -61,7 +61,7 @@ export const algorithmCategories = [
   {
     id: 'ml',
     title: 'Machine Learning',
-    icon: 'brain-outline',
+    icon: 'bulb-outline',
     description: 'Algoritmos para aprendizado de máquina e IA',
     color: '#F72585',
   },
