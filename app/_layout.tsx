@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import AIAssistantChat from "@/components/AIAssistantChat";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,6 +38,7 @@ export default function RootLayout() {
             contentStyle: { flex: 1 } 
           }}
         />
+        <AIAssistantChat />
       </ThemeProvider>
     </SafeAreaProvider>
   );
