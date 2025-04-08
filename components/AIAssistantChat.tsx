@@ -212,6 +212,7 @@ const AIAssistantChat: React.FC<AIAssistantChatProps> = ({
 
   const fetchGeminiResponse = async (prompt: string): Promise<string> => {
     try {
+      console.log(GEMINI_API_KEY)
       const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
       
       if (!GEMINI_API_KEY) {
